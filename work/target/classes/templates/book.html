@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>图书详情</h1>
+<table border="1" align="center">
+    <tr>
+        <td>编号:</td>
+        <td th:text="${book.id}"></td>
+    </tr>
+    <tr>
+        <td>书名:</td>
+        <td th:text="${book.name}"></td>
+    </tr>
+    <tr>
+        <td>库存:</td>
+        <td th:text="${book.pnum}"></td>
+    </tr>
+    <tr>
+        <td>价格:</td>
+        <td th:text="${book.price}"></td>
+    </tr>
+    <tr>
+        <td>类目:</td>
+        <td th:text="${book.category}"></td>
+    </tr>
+    <tr>
+        <td>说明:</td>
+        <td th:text="${book.description}"></td>
+    </tr>
+    <tr>
+        <td>图片:</td>
+        <td th:text="${book.imgurl}"></td>
+    </tr>
+    <tr>
+        <td>作者:</td>
+        <td th:text="${book.author}"></td>
+    </tr>
+    <tr>
+        <td>已售:</td>
+        <td th:text="${book.sales}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

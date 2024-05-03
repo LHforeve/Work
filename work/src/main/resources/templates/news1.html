@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>warmer-redis</title>
+    <script type="text/javascript" src="/js/jquery-1.12.4.js"></script>
+    <script>
+        function zan(id){
+            $.ajax({
+                url:"/addZan",
+                type:"get",
+                data:"id="+id,
+                success:function(data){
+                    $("#countZan").text(data);
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">新闻1</h1>
+阅读数<font color="red" th:text="${read}" ></font>&nbsp;&nbsp; 点赞数<font id="countZan" color="red" th:text="${zan==null?0:zan}"></font>&nbsp;&nbsp;
+<input type="button" onclick="zan(1)" value="点赞"/>
+
+</body>
+</html>

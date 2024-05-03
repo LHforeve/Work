@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图书信息列表</title>
+</head>
+<body>
+
+<table border="1" align="center">
+    <tr>
+        <td>编号</td>
+        <td>书名</td>
+        <td>库存</td>
+        <td>价格</td>
+        <td>类目</td>
+        <td>说明</td>
+        <td>图片</td>
+        <td>作者</td>
+        <td>已售</td>
+        <td>详情</td>
+        <td>删除</td>
+
+    </tr>
+<tr th:each="book:${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.pnum}"></td>
+        <td th:text="${book.price}"></td>
+        <td th:text="${book.category}"></td>
+        <td th:text="${book.description}"></td>
+        <td th:text="${book.imgurl}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.sales}"></td>
+    <td><a th:href="@{'/findBookById/'+${book.id}}">详细信息</a></td>
+    <td><a th:href="@{'/deleteBook/'+${book.id}}">删除</a></td>
+</tr>
+
+</table>
+</body>
+</html>
